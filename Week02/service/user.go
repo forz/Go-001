@@ -1,7 +1,7 @@
 package service
 
 import (
-	"Go-000/Week02/dao"
+	"Go-001/Week02/dao"
 )
 
 func GetUserName(userID string) (string, error) {

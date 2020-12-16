@@ -2,7 +2,7 @@
 package api
 
 import (
-	"Go-000/Week02/service"
+	"Go-001/Week02/service"
 )
 
 // SameUserName compare 2 user's name.

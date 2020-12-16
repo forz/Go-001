@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pb;
+
+import "google/api/annotations.proto";
+
+// The Homework service definition.
+service Homework {
+  rpc GetUserName(GetUserNameRequest) returns (GetUserNameReply) {
+    option (google.api.http) = {
+      post: "/GetUserName"
+      body: "*"
+    };
+  }
+}
+
+message GetUserNameRequest {
+  string id = 1;
+}
+
+message GetUserNameReply {
+  string name = 1;
+}
