@@ -22,11 +22,10 @@
    2. internal目录放service层,是业务逻辑,不允许import.
 3. internal内部分层
    * service层:应用服务层
+     * service.go 应用服务代码
+     * middleware.go 应用服务装饰器中间件代码
    * domain 领域层
-      * foo 聚合层
-        * service 领域服务层,编排entity层方法,供应用服务层使用
-        * entity 领域实体层,充血模型,调用repository.
-        * repository PO层,只存放数据库结构体,剩下的交给orm
-4. wire的使用时机
-   1. 在domain内部使用,这里是业务的核心层,与业务逻辑解耦,适合用gomock进行测试.
-   2. 在main函数使用
+      * user 聚合层
+        * service.go 领域服务代码,编排entity层方法,供应用服务层使用
+        * entity层 领域实体层,充血模型,调用repository.
+4. 全局repository PO层,只存放数据库结构体,剩下的交给orm.

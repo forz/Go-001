@@ -6,8 +6,8 @@
 package main
 
 import (
+	"Go-001/Week04/homework/internal/domain/user"
 	"Go-001/Week04/homework/internal/domain/user/entity"
-	service2 "Go-001/Week04/homework/internal/domain/user/service"
 	"Go-001/Week04/homework/internal/service"
 	"gorm.io/gorm"
 )
@@ -16,7 +16,7 @@ import (
 
 func InitHomeworkService(db *gorm.DB) service.HomeworkService {
 	userEntity := entity.NewBasicUserEntity(db)
-	userDomainService := service2.NewBasicUserDomainService(userEntity)
+	userDomainService := user.NewBasicDomainService(userEntity)
 	homeworkService := service.NewBasicHomeworkService(userDomainService)
 	return homeworkService
 }

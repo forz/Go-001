@@ -1,7 +1,7 @@
 package service
 
 import (
-	"Go-001/Week04/homework/internal/domain/user/service"
+	"Go-001/Week04/homework/internal/domain/user"
 	"context"
 )
 
@@ -12,11 +12,11 @@ type HomeworkService interface {
 }
 
 type basicHomeworkService struct {
-	svc service.UserDomainService
+	svc user.DomainService
 }
 
 // NewBasicHomeworkService returns a naive, stateless implementation of HomeworkService.
-func NewBasicHomeworkService(u service.UserDomainService) HomeworkService {
+func NewBasicHomeworkService(u user.DomainService) HomeworkService {
 	return &basicHomeworkService{svc: u}
 }
 
